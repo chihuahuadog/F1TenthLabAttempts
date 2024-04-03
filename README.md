@@ -35,6 +35,10 @@ The slam toolbox is ros2 is essentially used to create a map. The slam_toolbox i
 \
   
 
+https://github.com/chihuahuadog/F1TenthLabAttempts/assets/40186166/cb1ea75f-0582-420a-9a74-9fa9c4519fe3
+
+
+
 # Lab 7: RRT and path planning
 
 Essentially what happens in the rrt node in python is that a goal location and a start position is provided and the rrt algorithm is used to find a path for the car and the car follows the path using the pure pursuit algorithm. The rrt algorithm changes the path based on the occupancy grid node. The occupancy grid node shows where there are obstacles in the map and is updated using the Laserscan messages received from the simulation. The rrt algorithm essentially works by building a tree. The tree starts with containing only the initial configuration of the robot which is given through the 2D Pose Estimate in the rviz simulation and when used, publishes to the /initialpose topic. A while loop is used to explore the current known environment. At each iteration, a random point is sampled in the configuration space. Then find the nearest node in the existing tree to the sampled point and take a step towards the random point. If the step is collision free, add the new node to the tree and connect it to the nearest node.  
